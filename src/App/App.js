@@ -5,6 +5,7 @@ import 'firebase/auth';
 
 import Auth from '../components/Auth/Auth';
 import Home from '../components/Home/Home';
+import MyNavbar from '../components/MyNavBar/MyNavbar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
@@ -16,7 +17,7 @@ fbConnection();
 class App extends React.Component {
   state = {
     authed: false,
-  }
+  };
 
   componentDidMount() {
     this.removeListener = firebase.auth().onAuthStateChanged((user) => {
@@ -33,16 +34,18 @@ class App extends React.Component {
   }
 
   render() {
+    const { authed } = this.state;
     const loadComponent = () => {
-      if (this.state.authed) {
+      if (authed) {
         return <Home />;
       }
       return <Auth />;
     };
     return (
-    <div className="App">
-      {loadComponent()}
-    </div>
+      <div className="App">
+        <MyNavbar authed={this.state.authed} />
+        {loadComponent()}
+      </div>
     );
   }
 }
