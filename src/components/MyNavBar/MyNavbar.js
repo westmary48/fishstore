@@ -14,7 +14,7 @@ class MyNavbar extends React.Component {
     e.preventDefault();
     firebase.auth().signOut();
   }
-  // eslint-disable-next-line lines-between-class-members
+
   render() {
     const { authed } = this.props;
     return (
