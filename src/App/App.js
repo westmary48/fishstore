@@ -6,9 +6,6 @@ import 'firebase/auth';
 import Auth from '../components/Auth/Auth';
 import Home from '../components/Home/Home';
 import MyNavbar from '../components/MyNavBar/MyNavbar';
-import Inventory from '../components/Inventory/Inventory';
-import NewOrder from '../components/NewOrder/NewOrder';
-import Orders from '../components/Orders/Orders';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
