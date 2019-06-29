@@ -24,10 +24,14 @@ class Home extends React.Component {
       .catch(err => console.error('cant get orders', err));
   }
 
-  componentDidMount() {
+  getFishes = () => {
     fishData.getFishes()
       .then(fishes => this.setState({ fishes }))
       .catch(err => console.error('could not get fishes', err));
+  }
+
+  componentDidMount() {
+    this.getFishes();
     this.getOrders();
   }
 
