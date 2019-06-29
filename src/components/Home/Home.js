@@ -28,6 +28,10 @@ class Home extends React.Component {
       .catch(err => console.error('cant get orders', err));
   }
 
+  deleteOrder = (orderId) => {
+    console.error('you clicked delete button', orderId);
+  }
+
   render() {
     const { fishes, orders } = this.state;
     return (
@@ -40,7 +44,7 @@ class Home extends React.Component {
         <NewOrder />
         </div>
         <div className = "col">
-        <Orders orders = {orders}/>
+        <Orders orders = {orders} deleteOrder= {this.deleteOrder}/>
       </div>
       </div>
       </div>
