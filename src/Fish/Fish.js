@@ -1,5 +1,7 @@
 import React from 'react';
 
+import PropTypes from 'prop-types';
+
 import fishShape from '../helpers/propz/fishShapes';
 import format from '../helpers/format';
 
@@ -8,12 +10,13 @@ import './Fish.scss';
 class Fish extends React.Component {
   static propTypes = {
     fish: fishShape.fishShape,
+    addFishToOrder: PropTypes.func.isRequired,
   };
 
   addClickEvent = (e) => {
-    const { fish } = this.props;
+    const { fish, addFishToOrder } = this.props;
     e.preventDefault();
-    console.error('fish Id', fish.id);
+    addFishToOrder(fish.id);
   }
 
   render() {
