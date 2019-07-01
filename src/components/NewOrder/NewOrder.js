@@ -3,6 +3,10 @@ import React from 'react';
 import './NewOrder.scss';
 
 class NewOrder extends React.Component {
+  renderOrder = (key) => {
+    console.error(key);
+  };
+
   render() {
     const { fishOrder } = this.props;
     const orderIds = Object.keys(fishOrder);
@@ -21,7 +25,7 @@ class NewOrder extends React.Component {
             />
           </div>
         </form>
-        <ul>{}</ul>
+        <ul>{orderIds.map(this.renderOrder)}</ul>
         <div className="total">
           Total: <strong>SOME TOTAL HERE</strong>
         </div>
