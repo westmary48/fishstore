@@ -1,16 +1,41 @@
 import React from 'react';
 
+import format from '../../helpers/format';
+
 import './NewOrder.scss';
 
 class NewOrder extends React.Component {
   renderOrder = (key) => {
-    console.error(key);
+    const fish = this.props.fishes.find(x => x.id === key);
+    const count = this.props.fishOrder[key];
+    return (
+      <li>
+        <div className = "col-2 count">
+          {count} lbs
+        </div>
+        <div className = "col-5 count">
+          {fish.name}
+        </div>
+        <div className = "col-3 count">
+          {format.formatPrice(fish.price * count)}
+        </div>
+        <div className = "col-2 count">
+          <button className = "btn btn-outline-dark">X</button>
+        </div>
+      </li>
+    );
   };
 
   render() {
     const { fishOrder } = this.props;
     const orderIds = Object.keys(fishOrder);
     const orderExists = orderIds.length > 0;
+
+    const total = orderIds.reduce((prevTotal, key) => {
+      const fish = this.props.fishes.find(x => x.id === key);
+      const count = this.props.fishOrder[key];
+      return prevTotal + count * fish.price;
+    }, 0);
     return (
       <div className="NewOrder">
         <h1>New Order</h1>
@@ -27,7 +52,7 @@ class NewOrder extends React.Component {
         </form>
         <ul>{orderIds.map(this.renderOrder)}</ul>
         <div className="total">
-          Total: <strong>SOME TOTAL HERE</strong>
+          Total: <strong>{total}</strong>
         </div>
         <div className="text-center">
           {
