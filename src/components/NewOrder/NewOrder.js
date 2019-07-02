@@ -40,6 +40,11 @@ class NewOrder extends React.Component {
     );
   };
 
+  saveOder = (e) => {
+    this.props.saveNewOrder(this.state.orderName);
+    this.setState({ orderName: '' });
+  }
+
   render() {
     const { fishOrder } = this.props;
     const { orderName } = this.state;
@@ -74,7 +79,7 @@ class NewOrder extends React.Component {
         <div className="text-center">
           {
             orderExists ? (
-              <button className="btn btn-outline-dark"> Save Order </button>
+              <button className="btn btn-outline-dark" onClick= {this.saveOder}> Save Order </button>
             ) : (
               <div>Add Inventory to your order</div>
             )
