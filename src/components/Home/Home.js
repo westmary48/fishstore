@@ -59,6 +59,12 @@ class Home extends React.Component {
     newOrder.dataTime = Date.now();
     newOrder.uid = firebase.auth().currentUser.uid;
     console.error('newOder', newOrder);
+    ordersData.postOrder(newOrder)
+      .then(() => {
+        this.setState({ fishOrder: {} });
+        this.getOrders();
+      })
+      .catch(err => console.error('error in post order', err));
   }
 
   render() {
