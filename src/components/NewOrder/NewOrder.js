@@ -52,7 +52,7 @@ class NewOrder extends React.Component {
         </form>
         <ul>{orderIds.map(this.renderOrder)}</ul>
         <div className="total">
-          Total: <strong>{total}</strong>
+          Total: <strong>{format.formatPrice(total)}</strong>
         </div>
         <div className="text-center">
           {
