@@ -58,7 +58,7 @@ class Home extends React.Component {
     const newOrder = { fishes: { ...this.state.fishOrder }, name: orderName };
     newOrder.dataTime = Date.now();
     newOrder.uid = firebase.auth().currentUser.uid;
-    console.error('newOder', newOrder);
+    // console.error('newOder', newOrder);
     ordersData.postOrder(newOrder)
       .then(() => {
         this.setState({ fishOrder: {} });
