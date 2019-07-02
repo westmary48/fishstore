@@ -67,6 +67,12 @@ class Home extends React.Component {
       .catch(err => console.error('error in post order', err));
   }
 
+  selectOrderToEdit = (orderId) => {
+    const selectedOrder = this.state.orders.find(x => x.id === orderId);
+    this.setState({fishOrder: selectedOrder.fishes})
+    console.error('orderId inside home', selectedOrder);
+  }
+
   render() {
     const { fishes, orders, fishOrder } = this.state;
     return (
@@ -84,7 +90,7 @@ class Home extends React.Component {
         />
         </div>
         <div className = "col">
-        <Orders orders = {orders} deleteOrder= {this.deleteOrder}/>
+        <Orders orders = {orders} deleteOrder= {this.deleteOrder} selectOrderToEdit = {this.selectOrderToEdit}/>
       </div>
       </div>
       </div>
