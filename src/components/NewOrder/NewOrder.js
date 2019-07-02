@@ -5,6 +5,15 @@ import format from '../../helpers/format';
 import './NewOrder.scss';
 
 class NewOrder extends React.Component {
+  state= {
+    orderName: '',
+  }
+
+  nameChange = (e) => {
+    e.preventDefault();
+    this.setState({ orderName: e.target.value });
+  }
+
   renderOrder = (key) => {
     const fish = this.props.fishes.find(x => x.id === key);
     const count = this.props.fishOrder[key];
@@ -33,6 +42,7 @@ class NewOrder extends React.Component {
 
   render() {
     const { fishOrder } = this.props;
+    const { orderName } = this.state;
     const orderIds = Object.keys(fishOrder);
     const orderExists = orderIds.length > 0;
 
@@ -52,6 +62,8 @@ class NewOrder extends React.Component {
               className="form-control"
               id="order-name"
               placeholder="John's Order"
+              value = {orderName}
+              onChange ={this.nameChange}
             />
           </div>
         </form>
