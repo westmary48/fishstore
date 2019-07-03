@@ -13,7 +13,12 @@ class Orders extends React.Component {
 
   render() {
     const orderComponents = this.props.orders.map(order => (
-        <OrderRow key= {order.id} order = {order} deleteOrder= {this.props.deleteOrder} />
+    <OrderRow
+    key= {order.id}
+    order = {order}
+    deleteOrder= {this.props.deleteOrder}
+    selectedOrderToEdit = {this.props.selectedOrderToEdit}
+    />
     ));
     return (
       <div className="Orders">
