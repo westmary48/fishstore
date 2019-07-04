@@ -1,3 +1,24 @@
 .NewOrder {
-  display: block;
+  border: 1rem double black;
+  background: white;
+  transition: all 0.3s;
+  box-shadow: 0 5px 5px black;
+  overflow: scroll;
+  height: 75%;
+
+  ul {
+    margin: 20px;
+  }
+
+  li {
+    border-bottom: 1px solid black;
+    padding: 2rem 0;
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    align-items: center;
+    .count{
+      padding-right: 0;
+    }
+  }
 }

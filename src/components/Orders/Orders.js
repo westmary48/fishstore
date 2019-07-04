@@ -17,7 +17,7 @@ class Orders extends React.Component {
     key= {order.id}
     order = {order}
     deleteOrder= {this.props.deleteOrder}
-    selectedOrderToEdit = {this.props.selectedOrderToEdit}
+    selectOrderToEdit = {this.props.selectOrderToEdit}
     />
     ));
     return (
