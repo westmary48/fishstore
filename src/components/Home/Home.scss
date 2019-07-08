@@ -1,3 +1,70 @@
+@import '../../styles/_colors';
+
 .Home {
-  display: block;
+  flex: 1 4 auto;
+  padding: 2rem;
+  border: 1rem double $darkGray;
+  position: relative;
+  background: $white;
+  transition: all 0.3s;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+  overflow: scroll;
+
+  .menu {
+    height: 25%;
+  }
+
+  header.top {
+    text-align: center;
+  }
+  header.top h1 {
+    font-size: 14.4rem;
+    line-height: 0.7;
+    display: flex;
+    justify-content: center;
+  }
+  header.top h1 .ofThe {
+    display: flex;
+    font-size: 3rem;
+    color: $orange;
+    justify-content: center;
+    align-items: center;
+    background: url("./images/anchor.svg") center no-repeat;
+    background-size: cover;
+    padding: 0 1rem;
+  }
+  header.top h1 .ofThe .of {
+    padding-right: 2rem;
+    position: relative;
+    right: -0.5rem;
+  }
+  header.top h3 {
+    margin: 0;
+    font-size: 2rem;
+    color: $orange;
+    position: relative;
+    display: inline-block;
+  }
+  header.top h3 span {
+    background: $white;
+    position: relative;
+    z-index: 2;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  header.top h3:before, header.top h3:after {
+    display: block;
+    z-index: 1;
+    background: $black;
+    position: absolute;
+    width: 130%;
+    height: 1px;
+    content: '';
+    top: 5px;
+    margin-left: -15%;
+  }
+  header.top h3:after {
+    top: auto;
+    bottom: 7px;
+  }
 }

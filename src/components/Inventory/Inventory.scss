@@ -1,3 +1,9 @@
 .Inventory {
-  display: block;
+  border: 1rem double $black;
+  background: $white;
+  transition: all 0.3s;
+  box-shadow: 0 5px 5px $black;
+  overflow: scroll;
+  height: 90vh;
+  padding-top: 15px;
 }

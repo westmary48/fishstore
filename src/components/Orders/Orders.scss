@@ -1,3 +1,21 @@
-.Order {
+.Orders {
   display: block;
+  border: 1rem double $black;
+  background: $white;
+  transition: all 0.3s;
+  box-shadow: 0 5px 5px $black;
+  overflow: scroll;
+  padding-top: 15px;
+  height: 90vh;
+
+  .new-button {
+    margin-bottom: 20px;
+  }
+
+  .order-button {
+    text-transform: initial;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }

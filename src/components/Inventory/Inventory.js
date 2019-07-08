@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import fishShape from '../../helpers/propz/fishShapes';
-import Fish from '../../Fish/Fish';
+import Fish from '../Fish/Fish';
 
 
 class Inventory extends React.Component {

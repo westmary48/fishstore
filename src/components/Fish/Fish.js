@@ -2,8 +2,8 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import fishShape from '../helpers/propz/fishShapes';
-import format from '../helpers/format';
+import fishShape from '../../helpers/propz/fishShapes';
+import format from '../../helpers/format';
 
 import './Fish.scss';
 
